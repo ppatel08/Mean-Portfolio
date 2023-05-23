@@ -1,0 +1,45 @@
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-sm-6">
+            <mat-card-header>
+                <mat-card-title style="font-size: 25px;">
+                    Skillsets
+                </mat-card-title>
+            </mat-card-header>
+        </div>
+        <div class="col-sm-6">
+            <div class="float-right" style="text-align: right;">
+                <button type="button" class="btn btn-primary" routerLink="/portfolio/skillsets/0">Add Skillset</button> &nbsp;
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="table table-responsive">
+        <table class="table table-bordered">
+            <tr>
+                <th [width]="'5%'">#</th>
+                <th [width]="'30%'">Name</th>
+                <th>Image</th>
+                <th [width]="'8%'">Action</th>
+            </tr>
+            <tr *ngFor="let skill of skills; let i = index">
+                <td>{{i+1}}</td>
+                <td>{{skill.name}}</td>
+                <td>
+                    <img [src]="root.getImageUrl(skill?.image)"
+                        height="100px" width="100px">
+                </td>
+                <td>
+                    <button class="float-right btn btn-danger btn-sm " style="text-align: right; margin-left: 5px;"
+                        data-tooltip="Delete" (click)="delete(skill?._id)">
+                        <i class="fa fa-trash"></i>
+                    </button>
+                    <button class="float-right btn btn-primary btn-sm" style="text-align: right;"
+                        data-tooltip="Edit" (click)="edit(skill?._id)">
+                        <i class="fa fa-edit"></i>
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,158 @@
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">User Details</h1>
+</div>
+
+<div class="outlet-content">
+    <form class="user" [formGroup]="userForm">
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" formControlName="name" id="name" name="name" class="form-control">
+                    <div class="error input-error" style="width: auto;padding: 5px;"
+                        *ngIf="controls.name.invalid && (submitted || (controls.name.dirty || controls.name.touched))">
+                        <div *ngIf="controls.name.errors?.required">
+                            Name is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label>Designation</label>
+                    <input type="text" formControlName="designation" id="designation" name="designation" class="form-control">
+                    <div class="error input-error" style="width: auto;padding: 5px;"
+                        *ngIf="controls.designation.invalid && (submitted || (controls.designation.dirty || controls.designation.touched))">
+                        <div *ngIf="controls.designation.errors?.required">
+                            Designation is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label>Total Years Of Experience</label>
+                    <input type="text" formControlName="totalYearsOfExperience" id="totalYearsOfExperience" name="totalYearsOfExperience" class="form-control">
+                    <div class="error input-error" style="width: auto;padding: 5px;"
+                        *ngIf="controls.totalYearsOfExperience.invalid && (submitted || (controls.totalYearsOfExperience.dirty || controls.totalYearsOfExperience.touched))">
+                        <div *ngIf="controls.totalYearsOfExperience.errors?.required">
+                            Total Years Of Experience is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label>Companies Worked</label>
+                    <input type="text" formControlName="companiesWorked" id="companiesWorked" name="companiesWorked" class="form-control">
+                    <div class="error input-error" style="width: auto;padding: 5px;"
+                        *ngIf="controls.companiesWorked.invalid && (submitted || (controls.companiesWorked.dirty || controls.companiesWorked.touched))">
+                        <div *ngIf="controls.companiesWorked.errors?.required">
+                            Companies Worked is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label>Completed Projects</label>
+                    <input type="text" formControlName="completedProjects" id="completedProjects" name="completedProjects" class="form-control">
+                    <div class="error input-error" style="width: auto;padding: 5px;"
+                        *ngIf="controls.completedProjects.invalid && (submitted || (controls.completedProjects.dirty || controls.completedProjects.touched))">
+                        <div *ngIf="controls.completedProjects.errors?.required">
+                            Completed Projects is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label>Winning Awards</label>
+                    <input type="text" formControlName="winningAwards" id="winningAwards" name="winningAwards" class="form-control">
+                    <div class="error input-error" style="width: auto;padding: 5px;"
+                        *ngIf="controls.winningAwards.invalid && (submitted || (controls.winningAwards.dirty || controls.winningAwards.touched))">
+                        <div *ngIf="controls.winningAwards.errors?.required">
+                            Winning Awards is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label>LinkedIn</label>
+                    <input type="url" formControlName="linkedInUrl" id="linkedInUrl" name="linkedInUrl" class="form-control">
+                    <div class="error input-error" style="width: auto;padding: 5px;"
+                        *ngIf="controls.linkedInUrl.invalid && (submitted || (controls.linkedInUrl.dirty || controls.linkedInUrl.touched))">
+                        <div *ngIf="controls.linkedInUrl.errors?.required">
+                            LinkedIn is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label>GithubUrl</label>
+                    <input type="url" formControlName="githubUrl" id="githubUrl" name="githubUrl" class="form-control">
+                    <div class="error input-error" style="width: auto;padding: 5px;"
+                        *ngIf="controls.githubUrl.invalid && (submitted || (controls.githubUrl.dirty || controls.githubUrl.touched))">
+                        <div *ngIf="controls.githubUrl.errors?.required">
+                            Github is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label>StackOverflow</label>
+                    <input type="url" formControlName="stackOverflowUrl" id="stackOverflowUrl" name="stackOverflowUrl" class="form-control">
+                    <div class="error input-error" style="width: auto;padding: 5px;"
+                        *ngIf="controls.stackOverflowUrl.invalid && (submitted || (controls.stackOverflowUrl.dirty || controls.stackOverflowUrl.touched))">
+                        <div *ngIf="controls.stackOverflowUrl.errors?.required">
+                            StackOverflow is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+           
+           
+            <div class="col-6">
+                <div class="form-group">
+                    <label>Summary</label>
+                    <textarea type="text" formControlName="content" id="content" name="content" class="form-control"></textarea>
+                    <div class="error input-error" style="width: auto;padding: 5px;"
+                        *ngIf="controls.content.invalid && (submitted || (controls.content.dirty || controls.content.touched))">
+                        <div *ngIf="controls.content.errors?.required">
+                            Content is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label>About Me</label>
+                    <textarea type="text" formControlName="aboutMe" id="aboutMe" name="aboutMe" class="form-control"></textarea>
+                    <div class="error input-error" style="width: auto;padding: 5px;"
+                        *ngIf="controls.aboutMe.invalid && (submitted || (controls.aboutMe.dirty || controls.aboutMe.touched))">
+                        <div *ngIf="controls.aboutMe.errors?.required">
+                            About Me is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center m-t-50">
+            <div class="m-10">
+                <button mat-raised-button (click)="submitForm()" class="btn btn-primary btn-user btn-block">
+                    Save
+                </button>
+            </div>
+            <div class="m-10">
+                <button mat-raised-button (click)="back()" class="btn btn-danger btn-user btn-block">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

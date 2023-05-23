@@ -1,0 +1,54 @@
+<div class="col-sm-12">
+    <div class="row">
+        <div class="col-sm-6">
+            <mat-card-header>
+                <mat-card-title style="font-size: 25px;">
+                    Experiences
+                </mat-card-title>
+            </mat-card-header>
+        </div>
+        <div class="col-sm-6">
+            <div class="float-right" style="text-align: right;">
+                <button type="button" class="btn btn-primary" routerLink="/portfolio/experiences/0">Add Experience</button> &nbsp;
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="table table-responsive">
+        <table class="table table-bordered">
+            <tr>
+                <th [width]="'5%'">#</th>
+                <th [width]="'20%'">Designation</th>
+                <th>Started Month</th>
+                <th>Started Year</th>
+                <th>Ended Month</th>
+                <th>Ended Year</th>
+                <th>Descrioption</th>
+                <th>Company</th>
+                <th>Projects</th>
+                <th [width]="'8%'">Action</th>
+            </tr>
+            <tr *ngFor="let exp of experiences; let i = index">
+                <td>{{i+1}}</td>
+                <td>{{exp.designation}}</td>
+                <td>{{exp.startedMonth}}</td>
+                <td>{{exp.startedYear}}</td>
+                <td>{{exp.endedMonth}}</td>
+                <td>{{exp.endedYear}}</td>
+                <td>{{exp.description}}</td>
+                <td>{{exp.companyname}}</td>
+                <td></td>
+                <td>
+                    <button class="float-right btn btn-danger btn-sm " style="text-align: right; margin-left: 5px;"
+                        data-tooltip="Delete" (click)="delete(exp?._id)">
+                        <i class="fa fa-trash"></i>
+                    </button>
+                    <button class="float-right btn btn-primary btn-sm" style="text-align: right;"
+                        data-tooltip="Edit" (click)="edit(exp?._id)">
+                        <i class="fa fa-edit"></i>
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

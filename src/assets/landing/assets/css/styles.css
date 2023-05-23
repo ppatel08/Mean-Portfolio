@@ -1,0 +1,334 @@
+/*
+Custum CSS
+Authur : Dspattern;
+
+*/
+
+body {
+	font-family: 'Poppins', sans-serif;
+}
+img {
+	max-width: 100%;
+	width: 100%;
+}
+.home-block-left>h3 {
+	font-size: 20px;
+	color: #299cf7;
+}
+.home-block-left>h1 {
+	font-size: 38px !important;
+	font-weight: 600 !important;
+	color: #010101 !important;
+}
+.home-block-left>h4 {
+	font-size: 18px;
+	color: #508bbb;
+}
+.home-block-left>p, .about-metxt>p {
+	font-size: 14px;
+	line-height: 23px;
+	color: #3d3d3d;
+}
+.home-block-left {
+	margin: 20% 1%;
+}
+.section-title {
+	font-size: 38px;
+	font-weight: 600;
+	color: #010101;
+}
+.section-title+h5 {
+	font-size: 16px;
+	color: #858585;
+}
+.about-block .container>.row {
+	margin-top: 5rem;
+}
+.about-metxt>.row {
+	margin-top: 3rem;
+	margin-bottom: 2rem;
+}
+.about-metxt>.row>.col-md-4>h3 {
+	font-weight: 700;
+}
+.about-metxt>.row>.col-md-4>p {
+	font-size: 16px;
+}
+.mt-icons>ul {
+	list-style: none;
+	padding-left: 0;
+}
+.mt-icons>ul>.o-circle {
+	width: 100%;
+}
+.mt-icons>ul>.o-circle>img {
+	width: 100%;
+	max-width: 100%;
+}
+.mt-icons>ul>li>.o-circle {
+	width: 100px;
+	background-color: #f2f2f2;
+	border-radius: 100%;
+	height: 100px;
+	margin: 0 auto;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	border: 2px solid #f2f2f2;
+	transition: all 0.3s ease-in;
+}
+.mt-icons>ul>li>.o-circle>img {
+	max-width: 40px;
+	filter: grayscale(1);
+	transition: all 0.3s ease-in;
+}
+.mt-icons>ul>li>span {
+	display: block;
+	text-align: center;
+	width: 100px;
+	margin: 1rem 0;
+}
+.mt-icons>ul>li>.o-circle:hover>img {
+	filter: grayscale(0);
+}
+.mt-icons>ul>li>.o-circle:hover {
+	background-color: transparent;
+}
+.mt-icons>ul>li>.o-flutter:hover {
+	border-color: #5fd6fb;
+}
+.mt-icons>ul>li>.o-css3:hover {
+	border-color: #1872b6;
+}
+.mt-icons>ul>li>.o-figma:hover {
+	border-color: #a259ff;
+}
+.mt-icons>ul>li>.o-git:hover {
+	border-color: #f34f29;
+}
+.mt-icons>ul>li>.o-graphql:hover {
+	border-color: #df34a6;
+}
+.mt-icons>ul>li>.o-html5:hover {
+	border-color: #000;
+}
+.mt-icons>ul>li>.o-javascript:hover {
+	border-color: #f7df1d;
+}
+.mt-icons>ul>li>.o-node-js:hover {
+	border-color: #83cd29;
+}
+.mt-icons>ul>li>.o-python:hover {
+	border-color: #3773a6;
+}
+.mt-icons>ul>li>.o-react:hover {
+	border-color: #61dafb;
+}
+.mt-icons>ul>li>.o-redux:hover {
+	border-color: #764abc;
+}
+.mt-icons>ul>li>.o-sass:hover {
+	border-color: #cc6699;
+}
+.mt-icons>ul>li>.o-typescript:hover {
+	border-color: #1b7acc;
+}
+.mt-icons>ul>li>.o-vue:hover {
+	border-color: #41b883;
+}
+.mb3r {
+	margin-bottom: 3rem;
+}
+.mt3r {
+	margin-top: 3rem;
+}
+.yrs-calnder {
+	float: left;
+	width: 100%;
+	padding-top: 5%;
+}
+.yrs-calnder>ul {
+	list-style: none;
+	padding-left: 10%;
+	margin-bottom: 0;
+}
+.yrs-calnder>ul>li {
+	float: left;
+	width: 100%;
+}
+.yrs-calnder>ul>li>strong {
+	float: left;
+	font-weight: 500;
+	color: #4ea7ed;
+}
+.yrs-calnder .yrs-detail {
+	float: right;
+	width: 80%;
+	margin-bottom: 15px;
+}
+.yrs-calnder .yrs-detail>strong {
+	display: block;
+	font-weight: 500;
+	color: #434643;
+}
+.yrs-calnder .yrs-detail small {
+	color: #8c8c8c;
+}
+.yrs-calnder .yrs-detail:hover {
+	text-decoration: none;
+}
+.popover {
+	border: 1px solid rgb(126 123 123 / 20%);
+	border-radius: 0.3rem;
+	box-shadow: 0px 1px 5px #81818130;
+	font-family: 'Poppins', sans-serif;
+}
+.popover-body {
+	padding: 0.5rem 0.75rem;
+	color: #72777c;
+}
+/**/
+
+.section.portfolio .filters {
+	text-align: center;
+	margin-top: 50px;
+}
+.section.portfolio .filters ul {
+	padding: 0;
+}
+.section.portfolio .filters ul li {
+	list-style: none;
+	display: inline-block;
+	padding: 10px 18px;
+	cursor: pointer;
+	position: relative;
+	background-color: #fff;
+	font-size: 15px;
+	margin: 0px 5px;
+	border-radius: 10px;
+}
+.section.portfolio .filters ul li:after {}
+.section.portfolio .filters ul li:hover:after {
+	width: calc(100% - 60px);
+	transition: width 350ms ease-out;
+}
+.section.portfolio .filters ul li.active:after {
+	width: calc(100% - 60px);
+}
+.section.portfolio .filters-content {
+	margin-top: 50px;
+}
+.section.portfolio .filters-content .show {
+	opacity: 1;
+	visibility: visible;
+	transition: all 350ms;
+}
+.section.portfolio .filters-content .hide {
+	opacity: 0;
+	visibility: hidden;
+	transition: all 350ms;
+}
+.section.portfolio .filters-content .item {
+	text-align: center;
+	cursor: pointer;
+	margin-bottom: 30px;
+	background-color: #fff;
+	border-radius: 10px;
+}
+.section.portfolio .filters-content .item .p-inner {
+	padding: 20px 30px;
+}
+.section.portfolio .filters-content .item .p-inner h5 {
+	font-size: 15px;
+}
+.section.portfolio .filters-content .item .p-inner .cat {
+	font-size: 13px;
+}
+.section.portfolio .filters-content .item img {
+	width: 90%;
+	border-radius: 10px;
+	margin-top: 20px;
+}
+.portfolio-block {
+	background-color: #dff1ff;
+	padding-top: 1rem;
+	margin-top: 2rem;
+}
+.section.portfolio .filters ul li.active {
+	background-color: #3b28b4;
+	color: #fff;
+}
+.section-title>span {
+	color: #3b28b4;
+}
+.about-block {
+	padding: 0 0 2rem;
+}
+footer {
+	background-color: #2c2c2c;
+	text-align: center;
+	padding: 10px;
+	color: #fff;
+}
+footer>a {
+	color: #fff;
+}
+footer>a:hover {
+	color: #fff;
+}
+.btn-primary {
+	color: #fff;
+	background-color: #4ea7ed;
+	border-color: #4ea7ed;
+}
+.btn-primary:hover {
+	color: #fff;
+	background-color: #008bf8;
+	border-color: #008bf8;
+}
+.btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus {
+	box-shadow: 0 0 0 0.2rem rgb(230 244 255);
+}
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+	color: #fff;
+	background-color: #299cf7;
+	border-color: #4ea7ed;
+}
+.form-control {
+	height: 50px;
+}
+.custum-btn {
+	height: 50px;
+	font-size: 1.3rem;
+	width: 50%;
+	margin: 0 auto;
+}
+.container960 {
+	max-width: 960px;
+}
+.cpt-10 {
+	padding-top: 10px;
+}
+@media screen and (max-width:640px) {
+	.about-block .btn-primary {
+		margin: 0 auto;
+		width: 160px;
+		display: block;
+	}
+}
+@media screen and (max-width:576px) {
+	.mt-icons .col-sm-3 {
+		flex: 0 0 50%;
+		max-width: 50%;
+	}
+	.mt-icons>ul>li>.o-circle {
+		display: block;
+		padding: 25px;
+	}
+	.mt-icons>ul>li>span {
+		width: 100%;
+	}
+	.custum-btn {
+		width: 100%;
+	}
+}

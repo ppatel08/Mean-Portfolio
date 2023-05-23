@@ -1,0 +1,90 @@
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-sm-6">
+            User Details
+        </div>
+        <div class="col-sm-6">
+            <div class="float-right" style="text-align: right;">
+
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="emp-profile">
+            <form method="post">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-img">
+                            <img *ngIf="showImage" [src]="root.getImageUrl(user?.profileImage)" alt="" />
+                            <div class="file btn btn-lg btn-primary">
+                                Change Photo
+                                <input type="file" name="file" (change)="uploadProfileImage($event.target)"
+                                    style="z-index: 9999;" class="btn btn-lg btn-primary" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="profile-head">
+                            <h4 style="font-size: 16px;">
+                                {{user?.name}}
+                            </h4>
+                            <h5 style="font-size: 14px;">
+                                {{user?.designation}}
+                            </h5>
+                            <p class="proile-rating"><span>{{user?.totalYearsOfExperience || '0'}}</span> Years of experience</p>
+                            <p class="proile-rating"><span>{{user?.companiesWorked || '0'}}</span> Companies worked</p>
+                            <p class="proile-rating"><span>{{user?.completedProjects || '0'}}</span> Completed Projects</p>
+                            <p class="proile-rating"><span>{{user?.winningAwards || '0'}}</span> Winning Awards</p>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <table class="table table-borderless">
+                                <tr>
+                                    <th [width]="'30%'">Summary</th>
+                                    <td>{{user?.content || '-'}}</td>
+                                </tr>
+                                <tr>
+                                    <th [width]="'30%'">About Me</th>
+                                    <td>{{user?.aboutMe || '-'}}</td>
+                                </tr>
+                                <tr>
+                                    <th [width]="'30%'">LinkedIn Url</th>
+                                    <td>{{user?.linkedInUrl || '-'}}</td>
+                                </tr>
+                                <tr>
+                                    <th [width]="'30%'">Github Url</th>
+                                    <td>{{user?.githubUrl || '-'}}</td>
+                                </tr>
+                                <tr>
+                                    <th [width]="'30%'">StackOverflow Url</th>
+                                    <td>{{user?.stackOverflowUrl || '-'}}</td>
+                                </tr>
+
+                                <tr>
+                                    <th [width]="'30%'">Resume</th>
+                                    <td>
+                                        <a [href]="root.getImageUrl(user?.cvUrl)"
+                                            target='_blank'>Download</a>
+                                        <div class="float-right">
+                                            <label class="btn btn-sm btn-primary" for="cvFile">
+                                                Upload CV
+                                                <input type="file" name="cvFile" id="cvFile" accept="application/pdf" (change)="uploadCV($event.target)" style="display: none;" />
+                                            </label>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="float-right btn btn-primary btn-sm" style="text-align: right;"
+                            data-tooltip="Edit" (click)="edit(user._id)">
+                            <i class="fa fa-edit"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>

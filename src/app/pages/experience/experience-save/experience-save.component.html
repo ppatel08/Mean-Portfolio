@@ -1,0 +1,144 @@
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">{{_id? 'Edit':'Add'}} Experience</h1>
+</div>
+
+
+<div class="outlet-content">
+
+    <form class="user" [formGroup]="experienceForm">
+        <!-- Content Row -->
+
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label>Designation</label>
+                    <input type="text" formControlName="designation" id="designation" name="designation" class="form-control">
+                    <div class="error input-error" style="width: auto;padding: 5px;"
+                        *ngIf="controls.designation.invalid && (submitted || (controls.designation.dirty || controls.designation.touched))">
+                        <div *ngIf="controls.designation.errors?.required">
+                            Designation is required.
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <div class="col-6">
+                <div class="form-group">
+                    <label>Started Month</label>
+                    <input type="text" formControlName="startedMonth" id="startedMonth" name="startedMonth" class="form-control" min="1">
+                    <div class="error input-error" style="width: auto;padding: 5px;"
+                        *ngIf="controls.startedMonth.invalid && (submitted || (controls.startedMonth.dirty || controls.startedMonth.touched))">
+                        <div *ngIf="controls.startedMonth.errors?.required">
+                            Started Month is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label>Started Year</label>
+                    <input type="number" formControlName="startedYear" id="startedYear" name="startedYear" class="form-control" min="1">
+                    <div class="error input-error" style="width: auto;padding: 5px;"
+                        *ngIf="controls.startedYear.invalid && (submitted || (controls.startedYear.dirty || controls.startedYear.touched))">
+                        <div *ngIf="controls.startedYear.errors?.required">
+                            Started Year is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label>Ended Month</label>
+                    <input type="text" formControlName="endedMonth" id="endedMonth" name="endedMonth" class="form-control" min="1">
+                    <div class="error input-error" style="width: auto;padding: 5px;"
+                        *ngIf="controls.endedMonth.invalid && (submitted || (controls.endedMonth.dirty || controls.endedMonth.touched))">
+                        <div *ngIf="controls.endedMonth.errors?.required">
+                            Ended Month is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label>Ended Year</label>
+                    <input type="number" formControlName="endedYear" id="endedYear" name="endedYear" class="form-control" min="1">
+                    <div class="error input-error" style="width: auto;padding: 5px;"
+                        *ngIf="controls.endedYear.invalid && (submitted || (controls.endedYear.dirty || controls.endedYear.touched))">
+                        <div *ngIf="controls.endedYear.errors?.required">
+                            Ended Year is required.
+                        </div>
+                    </div>
+                </div>
+            </div>          
+            <div class="col-6">
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea type="text" formControlName="description" id="description" name="description" class="form-control">
+                    </textarea>
+                    <div class="error input-error" style="width: auto;padding: 5px;"
+                        *ngIf="controls.description.invalid && (submitted || (controls.description.dirty || controls.description.touched))">
+                        <div *ngIf="controls.description.errors?.required">
+                            Description is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label>Company</label>
+                    <input type="text" formControlName="companyname" id="companyname" name="companyname" class="form-control">
+                    <div class="error input-error" style="width: auto;padding: 5px;"
+                        *ngIf="controls.companyname.invalid && (submitted || (controls.companyname.dirty || controls.companyname.touched))">
+                        <div *ngIf="controls.companyname.errors?.required">
+                            Company is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <label>Projects</label>
+                    <div [formGroup]="experienceForm">
+                        <div formArrayName="projects" 
+                            *ngFor="let project of projects().controls; let i = index;">
+                            <div [formGroupName] = "i" class="row">
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label>Title</label>
+                                        <input type="text" formControlName="title" id="title" name="title" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-5">
+                                    <div class="form-group">
+                                        <label>Description</label>
+                                        <input type="text" formControlName="description" id="description" name="description" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <button class="btn btn-danger btn-sm " style="text-align: right; margin-top: 25px; margin-left: 5px;"
+                                        data-tooltip="Delete" (click)="deleteProject(i)">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button (click)="addItem()" class="btn btn-primary" style="text-align: right;">Add Projects</button>
+                    </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center m-t-50">
+            <div class="m-10">
+                <button mat-raised-button (click)="submitForm()" class="btn btn-primary btn-user btn-block">
+                    Save
+                </button>
+            </div>
+            <div class="m-10">
+                <button mat-raised-button (click)="back()" class="btn btn-danger btn-user btn-block">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </form>
+
+</div>

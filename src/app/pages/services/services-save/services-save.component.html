@@ -1,0 +1,107 @@
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">{{_id? 'Edit':'Add'}} Service</h1>
+</div>
+
+<div class="outlet-content">
+
+    <form class="user" [formGroup]="serviceForm">
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" formControlName="name" id="name" 
+                        name="name" class="form-control">
+                    <div class="error input-error" style="width: auto;padding: 5px;"
+                        *ngIf="controls.name.invalid && (submitted || (controls.name.dirty || controls.name.touched))">
+                        <div *ngIf="controls.name.errors?.required">
+                            Name is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label>Type</label>
+                    <input type="text" formControlName="type" id="type" 
+                        name="type" class="form-control">
+                    <div class="error input-error" style="width: auto;padding: 5px;"
+                        *ngIf="controls.type.invalid && (submitted || (controls.type.dirty || controls.type.touched))">
+                        <div *ngIf="controls.type.errors?.required">
+                            Type is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label>Service Image</label>
+                    <input type="file" formControlName="imageUrl" id="imageUrl" name="imageUrl" (change)="handleServiceImageInput($event.target)" 
+                        class="form-control" enctype="multipart/form-data" multiple="multiple" accept=".png">
+                    <div class="error input-error" style="width: auto;padding: 5px;"
+                        *ngIf="controls.imageUrl.invalid && (submitted || (controls.imageUrl.dirty || controls.imageUrl.touched))">
+                        <div *ngIf="controls.imageUrl.errors?.required">
+                            Image is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label>Description</label>
+                    <input type="text" formControlName="description" id="description" 
+                        name="description" class="form-control">
+                    <div class="error input-error" style="width: auto;padding: 5px;"
+                        *ngIf="controls.description.invalid && (submitted || (controls.description.dirty || controls.description.touched))">
+                        <div *ngIf="controls.description.errors?.required">
+                            Description is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-6">
+                <div class="form-group">
+                    <label>Percentage</label>
+                    <input type="number" formControlName="percentage" id="percentage" min="1"
+                        name="percentage" class="form-control">
+                    <div class="error input-error" style="width: auto;padding: 5px;"
+                    *ngIf="controls.percentage.invalid && (submitted || (controls.percentage.dirty || controls.percentage.touched))">
+                        <div *ngIf="controls.percentage.errors?.required">
+                            percentage is required.
+                        </div>
+                        <div *ngIf="controls.percentage.errors?.min">
+                            Value must be greater than or equal to 1
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="color"> Background Color  </label>
+                    <input type="color" formControlName="color" id="color"
+                        name="color" class="form-control">
+                    <div class="error input-error" style="width: auto;padding: 5px;"
+                    *ngIf="controls.color.invalid && (submitted || (controls.color.dirty || controls.color.touched))">
+                    <div *ngIf="controls.color.errors?.required">
+                        Background Color is required.
+                    </div>
+                </div>
+                </div>
+            </div> -->
+        
+        </div>
+
+        <div class="row justify-content-center m-t-50">
+            <div class="m-10">
+                <button mat-raised-button (click)="submitForm()" class="btn btn-primary btn-user btn-block">
+                    Save
+                </button>
+            </div>
+            <div class="m-10">
+                <button mat-raised-button (click)="back()" class="btn btn-danger btn-user btn-block">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </form>
+
+</div>

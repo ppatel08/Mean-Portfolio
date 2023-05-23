@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <title>:: HOME ::</title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600&display=swap"
+      rel="stylesheet">
+</head>
+
+<body>
+   <header class="bg-light">
+      <div class="container">
+         <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="#"><img src="assets/landing/assets/images/newlogo.png" style="width: 140px; height: 40px;"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+               aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                     <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#about">About Me</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#skill">Skill</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#portfolio">Portfolio</a>
+                  </li>
+               </ul>
+            </div>
+         </nav>
+      </div>
+   </header>
+   <section class="home-block" id="home">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-6">
+               <div class="home-block-left">
+                  <h3>Hi Dear, I am</h3>
+                  <h1>{{user?.name}}</h1>
+                  <h4>{{user?.designation}}</h4>
+                     <p>{{user?.content}}</p>
+                  <a class="btn btn-primary" href="#portfolio" role="button">See portfolio</a>
+               </div>
+            </div>
+            <div class="col-lg-6">
+               <img src="assets/landing/assets/images/images-h.png" class="img-responsive">
+            </div>
+         </div>
+      </div>
+   </section>
+   <section class="about-block" id="about">
+      <div class="container">
+         <h2 class="section-title text-center">About Me</h2>
+         <h5 class="text-center">My Introduction</h5>
+         <div class="clearfix"></div>
+         <div class="row">
+            <div class="col-lg-6">
+               <img src="assets/landing/assets/images/about-me.png">
+               <!-- <img src='http://localhost:9090/portfolio/api/v1/user/download/file?file={{user?.profileImage}}'> -->
+            </div>
+            <div class="col-lg-6">
+               <div class="about-metxt">
+                  <!-- <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                     industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                     and scrambled it to make a type specimen book.</p> -->
+                     <p>{{user?.aboutMe}}</p>
+                  <div class="row">
+                     <div class="col-md-4 col-sm-6 text-center text-xs-center">
+                        <h3>{{user?.totalYearsOfExperience}}+</h3>
+                        <p>Years <br>Experience</p>
+                     </div>
+                     <div class="col-md-4 col-sm-6 text-center text-xs-center">
+                        <h3>{{user?.completedProjects}}+</h3>
+                        <p>Completed <br>Projects</p>
+                     </div>
+                     <div class="col-md-4 col-sm-6 text-center text-xs-center">
+                        <h3>{{user?.companiesWorked}}+</h3>
+                        <p>Companies <br>Worked</p>
+                     </div>
+                  </div>
+               </div>
+               <a class="btn btn-primary" [href]="root.getImageUrl(user?.cvUrl)" target='_blank' role="button">Download CV <span
+                     class="fa-file-download fas"></span></a>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section class="skill-block" id="skill">
+      <div class="container">
+         <h2 class="section-title text-center mb3r mt3r">Skills and Experience</h2>
+         <div class="clearfix"></div>
+         <div class="row">
+            <div class="col-lg-6">
+               <div class="mt-icons">
+                  <ul class="row">
+                     <li class="col-sm-3 col-xs-6" *ngFor="let skill of skills">
+                        <div class="o-circle o-flutter">
+                           <img [src]="root.getImageUrl(skill?.image)">
+                        </div>
+                        <span>{{skill?.name}}</span>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="col-lg-6">
+               <div class="yrs-calnder">
+                  <mat-accordion>
+                     <mat-expansion-panel hideToggle *ngFor="let experience of experiences; let i = index" style="box-shadow: none !important; margin-bottom: 10px;">
+                       <mat-expansion-panel-header style="min-height: 60px !important;">
+                         <mat-panel-title style="max-width: 75px !important; font-weight: 500; color: #4ea7ed;">
+                           <strong>{{experience?.endedYear}}</strong>
+                         </mat-panel-title>
+                         <mat-panel-description style="font-weight: 500; color: #434643;">
+                           <div style="display: block;">
+                              <div>{{experience?.designation}}</div>
+                              <div><small>{{experience?.companyname}}</small></div>
+                           </div>
+                         </mat-panel-description>
+                       </mat-expansion-panel-header>
+                       <div style="padding-left: 91px; font-weight: 500; color: #434643;">
+                           <div *ngFor="let project of experience.projects" style="display: block; padding-bottom: 5px;">
+                              <div>{{project?.title}}</div>
+                              <div><small>{{project?.description}}</small></div>
+                           </div>
+                       </div>
+                     </mat-expansion-panel>
+                   </mat-accordion>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section class="portfolio-block" id="portfolio">
+      <div class="container">
+         <h2 class="section-title text-center mb3r mt3r">My Creative <span>Portfolio</span> Section</h2>
+         <div class="section portfolio">
+            <div class="filters">
+               <ul>
+                  <li [ngClass]="{active: selectedPortfolio === ''}" (click)="selectedPortfolio = ''">All</li>
+                  <li [ngClass]="{active: selectedPortfolio === serviceType}" (click)="selectedPortfolio = serviceType" *ngFor="let serviceType of serviceTypes">{{serviceType}}</li>
+               </ul>
+            </div>
+            <div class="filters-content">
+               <div class="row grid">
+                  <div class="col-sm-4 all uiux" *ngFor="let service of getFilteredServices()">
+                     <div class="item">
+                        <img style="max-height: 300px;" [src]='root.getImageUrl(service?.image)' alt="{{service?.name}}">
+                        <div class="p-inner">
+                           <h5>{{service?.name}}</h5>
+                           <div class="cat">{{service?.description}}</div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section class="contact-block" id="contact">
+      <div class="container container960">
+         <h2 class="section-title text-center pt-5">Contact Us</h2>
+         <div class="contact__wrapper mt-n9">
+            <div class="row no-gutters">
+               <div class="col-lg-12 contact-form__wrapper pb-5 pt-3">
+                  <form  [formGroup]="contactUsForm" class="contact-form form-validate">
+                     <div class="row">
+                        <div class="col-sm-6 mb-6">
+                           <div class="form-group">
+                              <label class="required-field" for="firstName">First Name</label>
+                              <input type="text" class="form-control" formControlName="firstName" id="firstName" name="firstName"
+                                 placeholder="First Name">
+                                 <div class="error" *ngIf="controls.firstName.invalid && (submitted || (controls.firstName.dirty || controls.firstName.touched))">
+												<div  *ngIf="controls.firstName.errors?.['required']">
+													Firstname is required.
+												</div>
+											</div>
+                           </div>
+                        </div>
+
+                        <div class="col-sm-6 mb-6">
+                           <div class="form-group">
+                              <label class="required-field" for="lastName">Last Name</label>
+                              <input type="text" class="form-control" formControlName="lastName" id="lastName" name="lastName"
+                                 placeholder="Last Name">
+                                 <div class="error" *ngIf="controls.lastName.invalid && (submitted || (controls.lastName.dirty || controls.lastName.touched))">
+												<div  *ngIf="controls.lastName.errors?.['required']">
+													LastName is required.
+												</div>
+											</div>
+                           </div>
+                        </div>
+
+                        <div class="col-sm-6 mb-6">
+                           <div class="form-group">
+                              <label class="required-field" for="email">Email</label>
+                              <input type="text" class="form-control" formControlName="email" id="email" name="email" placeholder="Email">
+                              <div class="error" *ngIf="controls.email.invalid && (submitted || (controls.email.dirty || controls.email.touched))">
+                                 <div  *ngIf="controls.email.errors?.['required']">
+                                    Email is required.
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+
+                        <div class="col-sm-6 mb-6">
+                           <div class="form-group">
+                              <label for="Number">Number</label>
+                              <input type="tel" class="form-control" formControlName="number" id="number" name="number" placeholder="Number">
+                              <div class="error" *ngIf="controls.number.invalid && (submitted || (controls.number.dirty || controls.number.touched))">
+                                 <div  *ngIf="controls.number.errors?.['required']">
+                                    Number is required.
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+
+                        <div class="col-sm-12 mb-6">
+                           <div class="form-group">
+                              <label class="required-field" for="message">Message</label>
+                              <textarea class="form-control" id="message" formControlName="message" name="message" rows="5" cols="4"
+                                 placeholder="Message..." style="height: 100px;"></textarea>
+                                 <div class="error" *ngIf="controls.message.invalid && (submitted || (controls.message.dirty || controls.message.touched))">
+                                    <div  *ngIf="controls.message.errors?.['required']">
+                                       Message is required.
+                                    </div>
+                                 </div>
+                           </div>
+                        </div>
+
+                        <div class="col-sm-12 cpt-10">
+                           <button type="submit" name="submit" (click)="submitContactUs()"
+                              class="btn btn-lg btn-block btn-primary custum-btn">Submit</button>
+                        </div>
+
+                     </div>
+                  </form>
+               </div>
+               <!-- End Contact Form Wrapper -->
+
+            </div>
+         </div>
+      </div>
+   </section>
+   <footer>&copy; 2022 <a href="#">Yourlogo Inc</a> All rights reserved.</footer>
+</body>
+
+</html>

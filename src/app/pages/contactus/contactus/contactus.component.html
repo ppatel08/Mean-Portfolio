@@ -1,0 +1,48 @@
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-sm-6">
+            <mat-card-header>
+                <mat-card-title style="font-size: 25px;">
+                    Contactus
+                </mat-card-title>
+            </mat-card-header>
+        </div>
+        <div class="col-sm-6">
+            <div class="float-right" style="text-align: right;">
+                <button type="button" class="btn btn-primary" routerLink="/portfolio/contactus/0">Add Contact</button> &nbsp;
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="table table-responsive">
+        <table class="table table-bordered">
+            <tr>
+                <th [width]="'5%'">#</th>
+                <th [width]="'20%'">First Name</th>
+                <th [width]="'20%'">Last Name</th>
+                <th [width]="'10%'">Email</th>
+                <th [width]="'10%'">Number</th>
+                <th [width]="'20%'">Message</th>
+                <th [width]="'8%'">Action</th>
+            </tr>
+            <tr *ngFor="let contact of contacts; let i = index">
+                <td>{{i+1}}</td>
+                <td>{{contact?.firstName}}</td>
+                <td>{{contact?.lastName}}</td>
+                <td>{{contact?.email}}</td>
+                <td>{{contact?.number}}</td>
+                <td>{{contact?.message}}</td>
+                <td>
+                    <button class="float-right btn btn-danger btn-sm" style="text-align: right; margin-left: 5px;"
+                        data-tooltip="Delete" (click)="delete(contact?._id)">
+                        <i class="fa fa-trash"></i>
+                    </button>
+                    <button class="float-right btn btn-primary btn-sm" style="text-align: right;"
+                        data-tooltip="Edit" (click)="edit(contact?._id)">
+                        <i class="fa fa-edit"></i>
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-sm-6">
+            <mat-card-header>
+                <mat-card-title style="font-size: 25px;">
+                    Services
+                </mat-card-title>
+            </mat-card-header>
+        </div>
+        <div class="col-sm-6">
+            <div class="float-right" style="text-align: right;">
+                <button type="button" class="btn btn-primary" routerLink="/portfolio/services/0"> Add Service</button> &nbsp;
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="table table-responsive">
+        <table class="table table-bordered">
+            <tr>
+                <th [width]="'5%'">#</th>
+                <th [width]="'30%'">Name</th>
+                <th>Type</th>
+                <th>Image</th>
+                <th>Description</th>
+                <!-- <th>Percentage</th>
+                <th>Color</th> -->
+                <th [width]="'8%'">Action</th>
+            </tr>
+            <tr *ngFor="let service of services; let i = index">
+                <td>{{i+1}}</td>
+                <td>{{service?.name}}</td>
+                <td>{{service?.type}}</td>
+                <td>
+                    <img [src]="root.getImageUrl(service?.image)"
+                        height="100px" width="100px">
+                </td>
+                <td>{{service?.description}}</td>
+                <!-- <td>{{service?.percentage}}</td>
+                <td>
+                    <div [ngStyle]="{'background-color': service?.color}"
+                            style="height: 25px; width: 50px; border: solid 1px; border-radius: 5px;">
+                    </div>
+                </td> -->
+                <td>
+                    <button class="float-right btn btn-danger btn-sm" style="text-align: right; margin-left: 5px;"
+                        data-tooltip="Delete" (click)="deleteServices(service?._id)">
+                        <i class="fa fa-trash"></i>
+                    </button>
+                    <button class="float-right btn btn-primary btn-sm" style="text-align: right;"
+                        data-tooltip="Edit" (click)="edit(service?._id)">
+                        <i class="fa fa-edit"></i>
+                    </button>
+                </td>
+        </table>
+    </div>
+</div>

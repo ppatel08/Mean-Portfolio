@@ -1,0 +1,52 @@
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">{{_id? 'Edit':'Add'}} Skills </h1>
+</div>
+
+
+<div class="outlet-content">
+
+    <form class="user" [formGroup]="skillsetForm">
+        <!-- Content Row -->
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label>Skill Name</label>
+                    <input type="text" formControlName="name" id="name" name="name" class="form-control">
+                    <div class="error input-error" style="width: auto;padding: 5px;"
+                        *ngIf="controls.name.invalid && (submitted || (controls.name.dirty || controls.name.touched))">
+                        <div *ngIf="controls.name.errors?.required">
+                            Skill Name is required.
+                        </div>
+                    </div>
+                </div>
+            </div>    
+            <div class="col-6">
+                <div class="form-group">
+                    <label>Image</label>
+                    <input type="file" formControlName="imageUrl" (change)="handleSkillImageInput($event.target)" id="imageUrl" 
+                    name="imageUrl" class="form-control" enctype="multipart/form-data" multiple="multiple" accept=".png">
+                    <div class="error input-error" style="width: auto;padding: 5px;"
+                        *ngIf="controls.imageUrl.invalid && (submitted || (controls.imageUrl.dirty || controls.imageUrl.touched))">
+                        <div *ngIf="controls.imageUrl.errors?.required">
+                            Image is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center m-t-50">
+            <div class="m-10">
+                <button mat-raised-button (click)="submitForm()" class="btn btn-primary btn-user btn-block">
+                    Save
+                </button>
+            </div>
+            <div class="m-10">
+                <button mat-raised-button (click)="back()" class="btn btn-danger btn-user btn-block">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </form>
+
+</div>
